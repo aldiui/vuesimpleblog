@@ -53,6 +53,7 @@ export default {
     },
 
     mounted() {
+        // this.getData();
         if (localStorage.getItem('blogs') == null) {
             localStorage.setItem(
                 'blogs',
@@ -88,7 +89,7 @@ export default {
     //     async getData() {
     //         const res = await this.axios.get('https://jsonplaceholder.typicode.com/posts');
 
-    //         this.blogs = res.data;
+    //         // this.blogs = res.data;
     //         var temp_array = res.data;
     //         this.blogs = temp_array.filter((item) => {
     //             return item.id > 90;
