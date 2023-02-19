@@ -1,31 +1,25 @@
 <template>
     <div>
-        <header class="masthead" style="background-image: url('/img/post-sample-image.jpg')">
-            <div class="container position-relative px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                        <div class="site-heading">
-                            <h1>@duniacoding Vue Blog</h1>
-                            <span class="subheading">Edit Blog</span>
-                        </div>
-                    </div>
-                </div>
+        <div class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white" style="background-image: url('/img/post-sample-image.jpg')">
+            <div class="p-5">
+                <h1 class="mb-3 h2 p-5 m-5 text-dark">Edit Simple Blog</h1>
             </div>
-        </header>
-
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <form @submit.prevent="submitData">
-                    <div class="mb-3">
-                        <label for="title" class="form-label">Title</label>
-                        <input v-model="title" type="text" class="form-control" id="title" aria-describedby="title" />
-                    </div>
-                    <div class="mb-3">
-                        <label for="body" class="form-label">Content</label>
-                        <textarea rows="8" class="form-control" placeholder="Add Content Here" id="body" v-model="body"> </textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary mb-4">Submit</button>
-                </form>
+        </div>
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <form @submit.prevent="submitData">
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Title</label>
+                            <input v-model="title" type="text" class="form-control" id="title" aria-describedby="title" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="body" class="form-label">Content</label>
+                            <textarea rows="8" class="form-control" placeholder="Add Content Here" id="body" v-model="body"> </textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary mb-4">Submit</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

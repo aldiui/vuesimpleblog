@@ -3,7 +3,8 @@ import App from "./App.vue";
 import router from "./router";
 
 // Local Css
-import "./assets/main.css";
+// import "./assets/main.css";
+import 'mdb-ui-kit/css/mdb.min.css';
 
 // Bootstrap
 // import "bootstrap/dist/css/bootstrap.min.css";

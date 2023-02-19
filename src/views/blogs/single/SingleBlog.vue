@@ -1,39 +1,24 @@
 <template>
     <div>
         <!-- Page Header-->
-        <header class="masthead" style="background-image: url('/img/post-bg.jpg')">
-            <div class="container position-relative px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                        <div class="post-heading">
-                            <h1>
-                                {{ data.title }}
-                            </h1>
-                            <h2 class="subheading">Problems look mighty small from 150 miles up</h2>
-                            <span class="meta">
-                                Posted by
-                                <a href="#!">Start Bootstrap</a>
-                                on August 24, 2022
-                            </span>
-                        </div>
+        <div class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white" style="background-image: url('/img/post-sample-image.jpg')">
+            <div class="p-5">
+                <h1 class="mb-3 h2 p-5 m-5 text-dark">{{ data.title }}</h1>
+            </div>
+        </div>
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="mb-3 d-flex gap-1">
+                        <button @click="deleteBlog(data.id)" class="btn btn-danger">Delete Blog</button>
+                        <RouterLink :to="'/blogs/' + data.id + '/edit'" class="btn btn-warning"> Edit Blog </RouterLink>
                     </div>
+                    <p>
+                        {{ data.body }}
+                    </p>
                 </div>
             </div>
-        </header>
-        <!-- Post Content-->
-        <article class="mb-4">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                        <button @click="deleteBlog(data.id)" class="btn btn-danger text-uppercase">Delete Blog</button>
-                        <RouterLink :to="'/blogs/' + data.id + '/edit'" class="btn btn-warning ms-4 text-uppercase"> Edit Blog </RouterLink>
-                        <p>
-                            {{ data.body }}
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </article>
+        </div>
     </div>
 </template>
 

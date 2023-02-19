@@ -1,42 +1,25 @@
 <template>
     <div>
-        <header class="masthead" style="background-image: url('/img/post-sample-image.jpg')">
-            <div class="container position-relative px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                        <div class="site-heading">
-                            <h1>@duniacoding Vue Blog</h1>
-                            <span class="subheading">A Blog Theme by Dunia Coding</span>
-                        </div>
-                    </div>
-                </div>
+        <div class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white" style="background-image: url('/img/post-sample-image.jpg')">
+            <div class="p-5">
+                <h1 class="mb-3 h2 p-5 m-5 text-dark">Simple Blog</h1>
             </div>
-        </header>
-
-        <!-- Post -->
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-md-10 col-lg-8 col-xl-7">
-                    <div class="d-flex justify-content-end mb-4">
-                        <RouterLink to="/blogs/add" class="btn btn-primary text-uppercase">Add Blog</RouterLink>
-                    </div>
-                    <div v-for="(data, index) of blogs" :key="'index-blogs-' + index">
-                        <div class="post-preview">
+        </div>
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-12 mb-3">
+                    <RouterLink to="/blogs/add" class="btn btn-primary">Add Blog</RouterLink>
+                </div>
+                <div class="col-lg-6"  v-for="(data, index) of blogs" :key="'index-blogs-' + index">
+                    <div class="card mb-3">
+                        <div class="card-header">
                             <RouterLink :to="'/blogs/' + data.id">
-                                <h2 class="post-title">
-                                    {{ data.title }}
-                                </h2>
-                                <h3 class="post-subtitle">
-                                    {{ data.body.slice(0, 80) }}
-                                </h3>
+                                <div class="card-title text-center text-dark">{{ data.title }}</div>
                             </RouterLink>
-                            <p class="post-meta">
-                                Posted by
-                                <a href="#!">Alfian Luthfi</a>
-                                on September 24, 2022
-                            </p>
                         </div>
-                        <hr class="my-4" />
+                        <div class="card-body">
+                            <p>{{ data.body.slice(0, 80) }}</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -60,7 +43,7 @@ export default {
                 JSON.stringify([
                     {
                         id: 1,
-                        title: 'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
+                        title: 'sunt aut facere',
                         body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus eveniet illum ullam reprehenderit repellat eius iusto? Vel ipsam velit, cumque totam nulla, tenetur aliquid dolore rem molestiae repellat, autem ullam nemo debitis sit dignissimos reprehenderit officia? Ipsum quam deleniti odio.',
                     },
                     {
